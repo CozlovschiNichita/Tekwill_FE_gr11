@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Registration form</title>
+</head>
+<body>
+
+<form autocomplete="on" method="post" > <!-- action="/submit_registration" --> <!-- Форма регистрации с включенным автозаполнением и методом передачи данных POST -->
+  
+  <fieldset>
+        <legend>Basic User Information:</legend> <!-- Раздел с базовой информацией о пользователе -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required><br> <!-- Поле для ввода полного имени, обязательное для заполнения -->
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br> <!-- Поле для ввода email, обязательное для заполнения -->
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required> <!-- Поле для ввода пароля, обязательное для заполнения -->
+        
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br> <!-- Поле для повторного ввода пароля, обязательное для заполнения -->
+        
+        <label>Gender:</label> <!-- Метка для поля выбора пола -->
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" required>
+        <label for="other">Other</label><br>
+        
+        <label for="birthdate">Date of Birth:</label>
+        <input type="date" id="birthdate" name="birthdate" required><br> <!-- Поле для ввода даты рождения, обязательное для заполнения -->
+  </fieldset>
+  
+  <fieldset>
+        <legend>Address Information:</legend>
+        <label for="street_address">Street Address:</label>
+        <textarea id="street_address" name="street_address" rows="2" cols="20" required></textarea><br> <!-- Поле для ввода адреса, обязательное для заполнения -->
+        
+        <label for="country">Country:</label> <!-- Метка для поля выбора страны -->
+            <select id="country" name="country"> <!-- Выпадающий список для выбора страны -->
+                <option value="Russia">Russia</option>
+                <option value="USA">USA</option>
+                <option value="England">England</option>
+                <option value="China">China</option>
+                <option value="India">India</option>
+            </select><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>  <!-- Поле для ввода города, обязательное для заполнения -->
+        
+        <label for="postal_code">Postal Code:</label>
+        <input type="tel" id="postal_code" name="postal_code" pattern="[0-9]*" required><br> <!-- number --> <!-- Поле для ввода почтового индекса, обязательное для заполнения, с ограничением на ввод только цифр -->
+  </fieldset>
+  
+  <fieldset>
+        <legend>Preferences:</legend>
+        <label>Preferred Contact Method:</label> <!-- Поля выбора метода связи, обязательные для заполнения -->
+        <input type="checkbox" id="email_pref" name="contact_method" value="email" required>
+        <label for="email_pref">Email</label>
+        <input type="checkbox" id="phone_pref" name="contact_method" value="phone" required>
+        <label for="phone_pref">Phone</label>
+        <input type="checkbox" id="mail_pref" name="contact_method" value="mail" required>
+        <label for="mail_pref">Postal Mail</label><br> 
+        
+        <label for="favorite_color">Favorite Color:</label>
+        <input type="color" id="favorite_color" name="favorite_color">
+  </fieldset>
+  
+  <fieldset>
+		<legend>Additional Details:</legend>
+		<label for="sobytie">How did you hear about us?</label>
+			<select id="sobytie" name="sobytie"> <!-- Выпадающий список выбора источника информации о нас -->
+ 				<option value="internet">Internet</option>
+ 				<option value="friend">Friend</option>
+ 				<option value="advertisement">Advertisement</option>
+ 				<option value="school">School</option>
+ 				<option value="university">University</option>
+			</select><br>
+
+		<label for="feedback">Feedback/Comments:</label>
+		<textarea id="feedback" name="feedback" rows="2" cols="20"></textarea> <!-- Поле для ввода обратной связи/комментариев -->
+	</fieldset>
+
+	<fieldset>
+	    <legend>Profile:</legend>
+		<label for="profileImage">Upload a profile picture (jpg or png):</label> <!-- Загрузите изображение профиля (jpg или png) -->
+		<input type="file" id="profileImage" name="profile_image" accept="image/jpeg, image/png" required><br> <!-- Поле для загрузки изображения профиля, обязательное для заполнения -->
+
+		<label for="website">Website URL:</label>
+		<input type="url" id="website" name="website" placeholder="Enter your website URL" required><br> <!-- Поле для ввода URL веб-сайта, обязательное для заполнения -->
+
+		<label for="experience">Experience Level with HTML:</label> 
+		<input type="range" id="experience" name="experience" min="1" max="10" oninput="displayValue.value=experience.value" required> <!-- Ползунок для выбора уровня опыта с HTML, обязательное для заполнения -->
+		<output id="displayValue">5</output> <!-- Текущее значение ползунка -->
+	</fieldset>
+  
+  <button type="submit">Send</button> <!-- Кнопка для отправки формы -->
+  <button type="reset">Reset</button> <!-- Кнопка для сброса значений формы -->
+  
+</form>
+
+</body>
+</html>
