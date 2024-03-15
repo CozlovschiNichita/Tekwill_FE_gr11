@@ -1,0 +1,13 @@
+#magazineTitle {
+    color: blue; 
+    text-transform: uppercase; /*заглавные*/
+    text-decoration: underline; /*подчеркнутые*/
+  }
+
+p {
+    color: rgb(63, 147, 199); 
+  }
+
+.individual {
+    color: rgb(130, 22, 63); 
+  }
